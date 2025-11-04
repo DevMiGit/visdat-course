@@ -5,7 +5,7 @@ footer: "FH OÖ Wels · Visualization & Data Processing (VIS3VO)"
 ---
 
 # Visualization & Data Processing  
-Master Mechanical Engineering · 3rd Semester
+Master Mechanical Engineering · 16rd Semester
 
 **Lecture 1: Programming Fundamentals & Tools**  
 Instructor: Stefan Oberpeilsteiner
