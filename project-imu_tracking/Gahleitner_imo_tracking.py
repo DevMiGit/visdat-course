@@ -13,7 +13,7 @@ from mpl_toolkits.mplot3d import Axes3D
 # 2 = Measurement of Π-shaped trajectory
 # 3 = Measurement 3 of circular trajectory
 # 4 = Measurement 4 of folding phone trajectory (→↑→↓)
-measurement_number = 4
+measurement_number = 1
 
 # Map measurement number to file paths
 measurement_files = {
