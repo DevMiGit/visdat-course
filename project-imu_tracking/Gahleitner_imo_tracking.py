@@ -8,8 +8,31 @@ from scipy.spatial.transform import Rotation as R
 from mpl_toolkits.mplot3d import Axes3D
 
 # Load separate files
-accel_df = pd.read_csv('project-imu_tracking/data/raw/Gahleitner_acceleration.csv')
-gyro_df = pd.read_csv('project-imu_tracking/data/raw/Gahleitner_gyroscope.csv')
+# Parameter to select which measurement to load
+# 1 = Measurement of 2D rectangular trajectory
+# 2 = Measurement of Π-shaped trajectory
+# 3 = Measurement 3 of circular trajectory
+# 4 = Measurement 4 of folding phone trajectory (→↑→↓)
+measurement_number = 4
+
+# Map measurement number to file paths
+measurement_files = {
+    1: ('project-imu_tracking/data/raw/Gahleitner_rectangle_acceleration.csv', 
+        'project-imu_tracking/data/raw/Gahleitner_rectangle_gyroscope.csv'),
+    2: ('project-imu_tracking/data/raw/Gahleitner_cshape_acceleration.csv', 
+        'project-imu_tracking/data/raw/Gahleitner_cshape_gyroscope.csv'),
+    3: ('project-imu_tracking/data/raw/Gahleitner_circular_acceleration.csv', 
+        'project-imu_tracking/data/raw/Gahleitner_circular_gyroscope.csv'),
+    4: ('project-imu_tracking/data/raw/Gahleitner_fold_acceleration.csv', 
+        'project-imu_tracking/data/raw/Gahleitner_fold_gyroscope.csv'),
+}
+
+# Load data based on selected measurement
+accel_file, gyro_file = measurement_files[measurement_number]
+accel_df = pd.read_csv(accel_file)
+gyro_df = pd.read_csv(gyro_file)
+
+print(f"Loaded measurement {measurement_number}")
 
 # MATLAB Mobile typically uses columns: Time, X, Y, Z
 # Rename for consistency
