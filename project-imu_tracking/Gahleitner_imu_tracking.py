@@ -415,12 +415,6 @@ print(f"Reconstructed distance: {reconstructed_distance:.3f} meters")
 print(f"Start position: {start_pos}")
 print(f"End position: {end_pos}")
 
-# If you measured the actual distance, compare:
-# actual_distance = 1.0  # meters (your measurement)
-# error = abs(reconstructed_distance - actual_distance)
-# print(f"Error: {error:.3f} meters ({error/actual_distance*100:.1f}%)")
-
-
 
 # Calculate acceleration magnitude in global frame
 accel_magnitude = np.sqrt(
